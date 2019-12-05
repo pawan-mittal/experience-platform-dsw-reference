@@ -58,6 +58,8 @@ def get_token():
         ims_endpoint_jwt = dictor(cfg, SERVER + ".ims_endpoint_jwt", checknone=True)
 
         # Enterprise parameters used to construct JWT
+        org_id = dictor(cfg, ENTERPRISE + ".org_id", checknone=True)
+        api_key = dictor(cfg, ENTERPRISE + ".api_key", checknone=True)
         client_secret = dictor(cfg, ENTERPRISE + ".client_secret", checknone=True)
         tech_acct = dictor(cfg, ENTERPRISE + ".tech_acct", checknone=True)
         priv_key_filename = dictor(cfg,  ENTERPRISE + ".priv_key_filename", checknone=True)
@@ -68,6 +70,8 @@ def get_token():
         priv_key_file.close()
         ims_token = "Bearer " + get_access_token(ims_host, ims_endpoint_jwt, org_id, tech_acct, api_key,
                                                  client_secret, priv_key)
+
+        LOGGER.error('Access Token: %s', ims_token)
     if not ims_token.startswith("Bearer "):
         ims_token = "Bearer " + ims_token
 
@@ -79,13 +83,15 @@ def get_headers():
     """
     api_key = dictor(cfg, ENTERPRISE + ".api_key", checknone=True)
     org_id = dictor(cfg, ENTERPRISE + ".org_id", checknone=True)
+    x_sandbox_name = dictor(cfg, ENTERPRISE + ".x_sandbox_name", checknone=True)
     headers = {}
     ims_token = get_token()
     if ims_token is not None:
         headers = {
             "Authorization": ims_token,
             "x-api-key": api_key,
-            "x-gw-ims-org-id": org_id
+            "x-gw-ims-org-id": org_id,
+            "x-sandbox-name": x_sandbox_name
         }
     return headers
 
