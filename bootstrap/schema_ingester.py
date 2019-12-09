@@ -58,7 +58,7 @@ def get_class_id(create_class_url, headers, class_title, data):
     
     return class_id
             
-def get_mixin_id(create_mixin_url, headers, mixin_title, data, class_id, tenant_id, mixin_definition_title, reset_demo):
+def get_mixin_id(create_mixin_url, headers, mixin_title, data, class_id, tenant_id, mixin_definition_title):
     """
     Get the mixinId by making a POST REQUEST to "/data/foundation/schemaregistry/tenant/mixins"
 
@@ -94,7 +94,7 @@ def get_mixin_id(create_mixin_url, headers, mixin_title, data, class_id, tenant_
     LOGGER.debug("mixin_id = %s", mixin_id)
     return mixin_id 
 
-def get_schema_id(create_schema_url, headers, schema_title, class_id, mixin_id, data, reset_demo):
+def get_schema_id(create_schema_url, headers, schema_title, class_id, mixin_id, data):
     """
     Get the schemaId by making a POST REQUEST to "/data/foundation/schemaregistry/tenant/schemas"
 
