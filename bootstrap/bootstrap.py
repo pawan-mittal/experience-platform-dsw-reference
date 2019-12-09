@@ -22,7 +22,7 @@ from utils import setup_logger
 from dictor import dictor
 import copy
 from data_ingester import get_dataset_id, get_batch_id, upload_file, replace_tenant_id, close_batch
-from schema_ingester import cleanup, get_tenant_id, get_class_id, get_mixin_id, get_schema_id
+from schema_ingester import input_cleanup, get_tenant_id, get_class_id, get_mixin_id, get_schema_id
 from get_token import get_access_token
 from build_recipe_artifacts import build_recipe_artifacts
 
@@ -139,7 +139,7 @@ def ingest(headers_for_ingestion):
         tenant_id = get_tenant_id(tenant_id_url, copy.deepcopy(headers_for_ingestion))
 
         if(reset_demo == "True"):
-            cleanup(create_class_url, create_schema_url, create_mixin_url, copy.deepcopy(headers_for_ingestion), input_class_title, data_for_class, input_mixin_title, data_for_mixin, tenant_id, input_mixin_definition_title)
+            input_cleanup(create_class_url, create_schema_url, create_mixin_url, copy.deepcopy(headers_for_ingestion), input_class_title, data_for_class, input_mixin_title, data_for_mixin, tenant_id, input_mixin_definition_title)
         
         class_id = get_class_id(create_class_url, copy.deepcopy(headers_for_ingestion), input_class_title, data_for_class)
 

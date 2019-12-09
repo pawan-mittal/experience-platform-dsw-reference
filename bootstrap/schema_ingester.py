@@ -124,7 +124,7 @@ def get_schema_id(create_schema_url, headers, schema_title, class_id, mixin_id, 
     return schema_id
 
 # clean up delete class, schema, and mixin ids
-def cleanup(create_class_url, create_schema_url, create_mixin_url, headers, class_title, class_data, mixin_title, data_for_mixin, tenant_id, mixin_definition_title):
+def input_cleanup(create_class_url, create_schema_url, create_mixin_url, headers, class_title, class_data, mixin_title, data_for_mixin, tenant_id, mixin_definition_title):
     try:
         print ("cleanup started")
         # Set the class title and description
