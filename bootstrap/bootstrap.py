@@ -141,13 +141,13 @@ def ingest(headers_for_ingestion):
         if(reset_demo == "True"):
             cleanup(create_class_url, create_schema_url, create_mixin_url, copy.deepcopy(headers_for_ingestion), input_class_title, data_for_class, input_mixin_title, data_for_mixin, tenant_id, input_mixin_definition_title)
         
-        class_id = get_class_id(create_class_url, create_schema_url, copy.deepcopy(headers_for_ingestion), input_class_title, data_for_class, reset_demo)
+        class_id = get_class_id(create_class_url, copy.deepcopy(headers_for_ingestion), input_class_title, data_for_class)
 
         input_mixin_id = get_mixin_id(create_mixin_url, copy.deepcopy(headers_for_ingestion), input_mixin_title,
-                                      data_for_mixin, class_id, tenant_id, input_mixin_definition_title, reset_demo)
+                                      data_for_mixin, class_id, tenant_id, input_mixin_definition_title)
 
         input_schema_id = get_schema_id(create_schema_url, copy.deepcopy(headers_for_ingestion), input_schema_title,
-                                        class_id, input_mixin_id, data_for_schema, reset_demo)
+                                        class_id, input_mixin_id, data_for_schema)
 
         # input_dataset_id = get_dataset_id(create_dataset_url, copy.deepcopy(headers_for_ingestion), input_dataset_title,
         #                                   input_schema_id, data_for_dataset)
