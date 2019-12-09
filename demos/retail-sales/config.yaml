@@ -1,0 +1,120 @@
+Server:
+  ims_host: ims-na1.adobelogin.com
+  ims_endpoint_jwt: /ims/exchange/jwt
+
+# All the Enterprise values can be obtained from the Adobe IO Integration
+Enterprise:
+  api_key: 208d43820fef4a4da49c27861248696c
+  org_id: E8475990589B24A90A495DDD@AdobeOrg # Sample value for reference - 20656D0F5B9975B20A495E23@AdobeOrg
+  tech_acct: CA27623F5D3854FC0A495FFB@techacct.adobe.com # Sample value for reference - F98D7E725CCA6F770A495FD9@techacct.adobe.com
+  client_secret: 5177e30b-3b89-40f4-9915-e631311fa9e5
+  x_sandbox_name: malkin
+  priv_key_filename: private.key
+
+Platform:
+  platform_gateway: https://platform.adobe.io
+  ims_token: <ims_token>
+  ingest_data: "True" # Value must be either "True" or "False"
+  build_recipe_artifacts: "False" # Value must be either "True" or "False"
+  kernel_type: Python # Value must be one of Spark, Pyspark, Python, R, example Spark
+
+
+Titles:
+    input_class_title: retail_sales_input_class
+    input_mixin_title: retail_sales_input_mixin
+    input_mixin_definition_title: retail_sales_input_mixin_definition
+    input_schema_title: retail_sales_input_schema
+    input_dataset_title: retail_sales_input_dataset
+    file_replace_tenant_id: DSWRetailSalesForXDM0.9.9.9.json
+    file_with_tenant_id: DSWRetailSales_with_tenant_id.json
+    is_output_schema_different: "True"
+    output_mixin_title: retail_sales_output_mixin
+    output_mixin_definition_title: retail_sales_output_mixin_definition
+    output_schema_title: retail_sales_output_title
+    output_dataset_title: retail_sales_output_dataset
+
+class_data:
+  "type": "object"
+  "title": "class_title"
+  "auditable": True
+  "meta:extends": ["https://ns.adobe.com/xdm/data/time-series"]
+  "description": "class_title"
+  "allOf": [{"$ref": "https://ns.adobe.com/xdm/data/time-series"}]
+
+input_mixin_data:
+  "type": "object"
+  "title": "mixin_title"
+  "description": "mixin_title"
+  "meta:intendedToExtend": [{"class_id"}]
+  "definitions": {
+    "retail": {
+      "properties": {
+        "tenant_id": {
+            "type":"object",
+            "properties": {
+              "date": {"title": "date", "type": "string","description": "date"},
+              "store": {"title": "store","type": "integer","description": "store"},
+              "storeType": {"title": "storeType","type": "string","description": "storeType"},
+               "weeklySales": {"title": "weeklySales","type": "number","description": "weeklySales"},
+               "storeSize": {"title": "storeSize","type": "integer","description": "storeSize"},
+               "temperature": {"title": "temperature","type": "number","description": "temperature"},
+                "regionalFuelPrice": {"title": "regionalFuelPrice","type": "number","description": "regionalFuelPrice"},
+                "markdown": {"title": "markdown","type": "number","description": "markdown"},
+                "cpi": {"title": "cpi","type": "number","description": "cpi"},
+                "unemployment": {"title": "unemployment","type": "number","description": "unemployment"},
+                "isHoliday": {"title": "isHoliday","type": "boolean","description": "isHoliday"}
+            }
+        }
+      }
+    }
+  }
+  "allOf": [{"$ref": "#/definitions/retail"}]
+
+
+output_mixin_data:
+  "type": "object"
+  "title": "mixin_title"
+  "description": "mixin_title"
+  "meta:intendedToExtend": [{"class_id"}]
+  "definitions": {
+    "retail": {
+      "properties": {
+        "tenant_id": {
+            "type":"object",
+            "properties": {
+              "date": {"title": "date", "type": "string","description": "date"},
+              "store": {"title": "store","type": "integer","description": "store"},
+              "prediction": {"title": "prediction","type": "number","description": "prediction"},
+            }
+        }
+      }
+    }
+  }
+  "allOf": [{"$ref": "#/definitions/retail"}]
+
+
+schema_data:
+  "type": "object"
+  "title": "schema_title"
+  "description": "schema_title"
+  "auditable": True
+  "meta:extends": [ "mixin_id", "class_id" ]
+  "allOf": [{"$ref": "mixin_id"},{"$ref": "class_id"}]
+
+dataset_data:
+  "schemaRef": {
+      "id": "schema_id",
+      "contentType": "application/vnd.adobe.xed+json; version=1"
+  }
+  "name": "dataset_title"
+  "description": "dataset_title"
+  "fileDescription": {
+      "persisted": True,
+      "containerFormat": "parquet",
+      "format": "parquet"
+  }
+  "aspect": "production"
+
+batch_data:
+  "datasetId": "dataset_id"
+  "inputFormat": {"format": "json"}
