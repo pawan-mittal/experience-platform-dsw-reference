@@ -1,0 +1,1 @@
+{ "_salesvelocity": { "date": "2/5/10", "store": 1, "arrayStr": ["pawan", "mittal"], "storeType": "A", "weeklySales": 1643690.9, "storeSize": 151315, "temperature": 42.31, "regionalFuelPrice": 2.572, "markdown": 0.0, "cpi": 211.0963582, "unemployment": 8.106, "isHoliday": false }, "_id": "dummy", "eventType": "dummy", "timestamp": "2019-11-01T00:00:00.000-08:00" }
