@@ -15,6 +15,7 @@ Platform:
   platform_gateway: https://platform.adobe.io
   ims_token: <ims_token>
   ingest_data: "True" # Value must be either "True" or "False"
+  reset_demo: "True" # Value must be either "True" or "False"
   build_recipe_artifacts: "False" # Value must be either "True" or "False"
   kernel_type: <kernel_type> # Value must be one of Spark, Pyspark, Python, R, example Spark
 

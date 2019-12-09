@@ -71,7 +71,7 @@ def get_token():
         ims_token = "Bearer " + get_access_token(ims_host, ims_endpoint_jwt, org_id, tech_acct, api_key,
                                                  client_secret, priv_key)
 
-        LOGGER.error('Access Token: %s', ims_token)
+        #LOGGER.error('Access Token: %s', ims_token)
     if not ims_token.startswith("Bearer "):
         ims_token = "Bearer " + ims_token
 
@@ -132,14 +132,16 @@ def ingest(headers_for_ingestion):
     data_for_batch = dictor(cfg, BATCH_DATA, checknone=True)
     data_for_output_mixin = dictor(cfg, OUTPUT_MIXIN_DATA, checknone=True)
 
+    reset_demo = dictor(cfg, PLATFORM + ".reset_demo", checknone=True)
+
     try:
 
         tenant_id = get_tenant_id(tenant_id_url, copy.deepcopy(headers_for_ingestion))
 
-        class_id = get_class_id(create_class_url, copy.deepcopy(headers_for_ingestion), input_class_title, data_for_class)
+        class_id = get_class_id(create_class_url, copy.deepcopy(headers_for_ingestion), input_class_title, data_for_class, reset_demo)
 
         input_mixin_id = get_mixin_id(create_mixin_url, copy.deepcopy(headers_for_ingestion), input_mixin_title,
-                                      data_for_mixin, class_id, tenant_id, input_mixin_definition_title)
+                                      data_for_mixin, class_id, tenant_id, input_mixin_definition_title, reset_demo)
 
         input_schema_id = get_schema_id(create_schema_url, copy.deepcopy(headers_for_ingestion), input_schema_title,
                                         class_id, input_mixin_id, data_for_schema)
@@ -184,6 +186,7 @@ if __name__ == "__main__":
     if ingest_data == "True":
         LOGGER.info("Ingesting data")
         if get_headers() is not None:
+            #get_headers()
             ingest(get_headers())
 
     if build_artifacts == "True":

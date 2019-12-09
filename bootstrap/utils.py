@@ -55,8 +55,9 @@ def http_request(method, url, headers, data=None):
     :return: response text
     """
     response = requests.request(method, url, headers=headers, data=data)
-    if response.status_code not in [200, 201]:
-        http_error_msg = u'%s HTTP request failed: %s for url: %s' % (response.status_code, response.text, url)
-        raise requests.exceptions.HTTPError(http_error_msg)
+    http_error_msg = u'%s HTTP request failed: %s for url: %s' % (response.status_code, response.text, url)
+    #print ("utils.http_request ", http_error_msg)
+    if response.status_code not in [200, 201, 204]:
+        raise requests.exceptions.HTTPError(response.text)
     return response.text
 

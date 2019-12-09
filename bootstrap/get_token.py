@@ -56,7 +56,7 @@ def get_jwt_token(ims_host, org_id, tech_acct, api_key, priv_key):
     # create JSON Web Token
     jwt_token = jwt.encode(payload, priv_key, algorithm='RS256')
 
-    LOGGER.debug("encoded jwt_token = %s", jwt_token)
+    #LOGGER.debug("encoded jwt_token = %s", jwt_token)
     return jwt_token
 
 
@@ -90,7 +90,7 @@ def get_access_token(ims_host, ims_endpoint_jwt, org_id, tech_acct, api_key,
     # send http post request
     res_text = http_request("post", url, headers, body)
     access_token = json.loads(res_text)["access_token"]
-    LOGGER.debug("access_token: %s", access_token)
+    #LOGGER.debug("access_token: %s", access_token)
     return access_token
 
 
