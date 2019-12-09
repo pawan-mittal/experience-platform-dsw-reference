@@ -144,18 +144,18 @@ def ingest(headers_for_ingestion):
                                       data_for_mixin, class_id, tenant_id, input_mixin_definition_title, reset_demo)
 
         input_schema_id = get_schema_id(create_schema_url, copy.deepcopy(headers_for_ingestion), input_schema_title,
-                                        class_id, input_mixin_id, data_for_schema)
+                                        class_id, input_mixin_id, data_for_schema, reset_demo)
 
-        input_dataset_id = get_dataset_id(create_dataset_url, copy.deepcopy(headers_for_ingestion), input_dataset_title,
-                                          input_schema_id, data_for_dataset)
+        # input_dataset_id = get_dataset_id(create_dataset_url, copy.deepcopy(headers_for_ingestion), input_dataset_title,
+        #                                   input_schema_id, data_for_dataset)
 
-        batch_id = get_batch_id(create_batch_url, copy.deepcopy(headers_for_ingestion), input_dataset_id, data_for_batch)
+        # batch_id = get_batch_id(create_batch_url, copy.deepcopy(headers_for_ingestion), input_dataset_id, data_for_batch)
 
-        replace_tenant_id(original_file, file_with_tenant_id, tenant_id)
+        # replace_tenant_id(original_file, file_with_tenant_id, tenant_id)
 
-        upload_file(create_batch_url, copy.deepcopy(headers_for_ingestion), file_with_tenant_id, input_dataset_id, batch_id)
+        # upload_file(create_batch_url, copy.deepcopy(headers_for_ingestion), file_with_tenant_id, input_dataset_id, batch_id)
 
-        close_batch(create_batch_url, copy.deepcopy(headers_for_ingestion), batch_id)
+        # close_batch(create_batch_url, copy.deepcopy(headers_for_ingestion), batch_id)
 
         if is_output_schema_different == "True":
             output_mixin_id = get_mixin_id(create_mixin_url, copy.deepcopy(headers_for_ingestion), output_mixin_title,
