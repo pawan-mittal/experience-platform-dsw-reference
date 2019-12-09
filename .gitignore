@@ -7,3 +7,8 @@ recipes/R/.Rhistory
 recipes/R/Retail - GradientBoosting/.Rbuildignore
 recipes/R/Retail - GradientBoosting/Retail - GradientBoosting.Rproj
 .idea/
+bootstrap/__pycache__/build_recipe_artifacts.cpython-37.pyc
+bootstrap/__pycache__/data_ingester.cpython-37.pyc
+bootstrap/__pycache__/get_token.cpython-37.pyc
+bootstrap/__pycache__/schema_ingester.cpython-37.pyc
+bootstrap/__pycache__/utils.cpython-37.pyc
