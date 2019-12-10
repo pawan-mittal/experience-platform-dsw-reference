@@ -1,0 +1,72 @@
+{
+    "version": "1.2",
+    "type": "object",
+    "title": "retail_sales_input_mixinobject1",
+    "description": "retail_sales_input_mixinobject1",
+    "meta:intendedToExtend": [
+        "https://ns.adobe.com/salesvelocity/classes/9b84f9ddc1a3ffacfacd2a65ed2d1299"
+    ],
+    "meta:xdmType": "object",
+    "properties": {
+        "_salesvelocity": {
+            "type": "object",
+            "meta:xdmType": "object",
+            "properties": {
+                "date": {
+                    "type": "string",
+                    "meta:xdmType": "string"
+                },
+                "store": {
+                    "type": "integer",
+                    "meta:xdmType": "int"
+                },
+                "storeType": {
+                    "type": "string",
+                    "meta:xdmType": "string"
+                },
+                "weeklySales": {
+                    "type": "number",
+                    "meta:xdmType": "number"
+                },
+                "storeSize": {
+                    "type": "integer",
+                    "meta:xdmType": "int"
+                },
+                "temperature": {
+                    "type": "number",
+                    "meta:xdmType": "number"
+                },
+                "regionalFuelPrice": {
+                    "type": "number",
+                    "meta:xdmType": "number"
+                },
+                "markdown": {
+                    "type": "number",
+                    "meta:xdmType": "number"
+                },
+                "cpi": {
+                    "type": "number",
+                    "meta:xdmType": "number"
+                },
+                "unemployment": {
+                    "type": "number",
+                    "meta:xdmType": "number"
+                },
+                "isHoliday": {
+                    "type": "boolean",
+                    "meta:xdmType": "boolean"
+                },
+                "arrayStr": {
+                    "description": "",
+                    "type": "array",
+                    "isRequired": false,
+                    "meta:xdmType": "array",
+                    "items": {
+                        "type": "string",
+                        "meta:xdmType": "string"
+                    }
+                }
+            }
+        }
+    }
+}

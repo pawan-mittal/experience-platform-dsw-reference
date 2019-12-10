@@ -1,0 +1,206 @@
+{
+    "type": "object",
+    "title": "retail_sales_input_mixinobject1",
+    "description": "retail_sales_input_mixinobject1",
+    "meta:intendedToExtend": [
+        "https://ns.adobe.com/salesvelocity/classes/1aa97cf5826539e6c046c056dffa368d"
+    ],
+    "definitions": {
+        "retail_sales_input_mixin_definitionobject1": {
+            "properties": {
+                "_salesvelocity": {
+                    "type": "object",
+                    "properties": {
+                        "tenantid": {
+                            "type": "object",
+                            "properties": {
+                                "date": {
+                                    "title": "date",
+                                    "type": "string",
+                                    "description": "date"
+                                },
+                                "store": {
+                                    "title": "store",
+                                    "type": "integer",
+                                    "description": "store"
+                                },
+                                "storeType": {
+                                    "title": "storeType",
+                                    "type": "string",
+                                    "description": "storeType"
+                                },
+                                "weeklySales": {
+                                    "title": "weeklySales",
+                                    "type": "number",
+                                    "description": "weeklySales"
+                                },
+                                "storeSize": {
+                                    "title": "storeSize",
+                                    "type": "integer",
+                                    "description": "storeSize"
+                                },
+                                "temperature": {
+                                    "title": "temperature",
+                                    "type": "number",
+                                    "description": "temperature"
+                                },
+                                "regionalFuelPrice": {
+                                    "title": "regionalFuelPrice",
+                                    "type": "number",
+                                    "description": "regionalFuelPrice"
+                                },
+                                "markdown": {
+                                    "title": "markdown",
+                                    "type": "number",
+                                    "description": "markdown"
+                                },
+                                "cpi": {
+                                    "title": "cpi",
+                                    "type": "number",
+                                    "description": "cpi"
+                                },
+                                "unemployment": {
+                                    "title": "unemployment",
+                                    "type": "number",
+                                    "description": "unemployment"
+                                },
+                                "isHoliday": {
+                                    "title": "isHoliday",
+                                    "type": "boolean",
+                                    "description": "isHoliday"
+                                },
+                                "arrayStr": {
+                                    "title": "arrayObj",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "status": {
+                                                "type": "string",
+                                                "title": "Status",
+                                                "description": "Status",
+                                                "default": "realized"
+                                            }
+                                        }
+                                    }
+                                },
+                                "arrayStr1": {
+                                    "title": "arrayObj1",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "thumbnailUrl": {
+                                                "type": "array",
+                                                "title": "thumbnailUrl",
+                                                "description": "thumbnailUrl",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "tenantid1": {
+                            "type": "object",
+                            "properties": {
+                                "date": {
+                                    "title": "date",
+                                    "type": "string",
+                                    "description": "date"
+                                },
+                                "store": {
+                                    "title": "store",
+                                    "type": "integer",
+                                    "description": "store"
+                                },
+                                "storeType": {
+                                    "title": "storeType",
+                                    "type": "string",
+                                    "description": "storeType"
+                                },
+                                "weeklySales": {
+                                    "title": "weeklySales",
+                                    "type": "number",
+                                    "description": "weeklySales"
+                                },
+                                "storeSize": {
+                                    "title": "storeSize",
+                                    "type": "integer",
+                                    "description": "storeSize"
+                                },
+                                "temperature": {
+                                    "title": "temperature",
+                                    "type": "number",
+                                    "description": "temperature"
+                                },
+                                "regionalFuelPrice": {
+                                    "title": "regionalFuelPrice",
+                                    "type": "number",
+                                    "description": "regionalFuelPrice"
+                                },
+                                "markdown": {
+                                    "title": "markdown",
+                                    "type": "number",
+                                    "description": "markdown"
+                                },
+                                "cpi": {
+                                    "title": "cpi",
+                                    "type": "number",
+                                    "description": "cpi"
+                                },
+                                "unemployment": {
+                                    "title": "unemployment",
+                                    "type": "number",
+                                    "description": "unemployment"
+                                },
+                                "isHoliday": {
+                                    "title": "isHoliday",
+                                    "type": "boolean",
+                                    "description": "isHoliday"
+                                },
+                                "arrayStr": {
+                                    "title": "arrayObj",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "status": {
+                                                "type": "string",
+                                                "title": "Status",
+                                                "description": "Status",
+                                                "default": "realized"
+                                            }
+                                        }
+                                    }
+                                },
+                                "arrayStr1": {
+                                    "title": "arrayObj1",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "thumbnailUrl": {
+                                                "type": "array",
+                                                "title": "thumbnailUrl",
+                                                "description": "thumbnailUrl",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "allOf": [{
+        "$ref": "#/definitions/retail_sales_input_mixin_definitionobject1"
+    }]
+}
