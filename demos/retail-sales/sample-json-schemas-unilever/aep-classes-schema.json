@@ -1,0 +1,12 @@
+{
+    "type": "object",
+    "title": "retail_sales_input_classobject3",
+    "description": "retail_sales_input_classobject3",
+    "auditable": true,
+    "meta:extends": [
+        "https://ns.adobe.com/xdm/data/time-series"
+    ],
+    "allOf": [{
+        "$ref": "https://ns.adobe.com/xdm/data/time-series"
+    }]
+}

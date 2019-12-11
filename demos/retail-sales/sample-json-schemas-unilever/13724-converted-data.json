@@ -1,0 +1,477 @@
+{
+  "_salesvelocity": {
+    "header": {
+      "context": "https://schema.org/",
+      "type": "Recipe",
+      "name": "Sandwich met geroosterde groenten en basilicum",
+      "image": [
+        {
+          "default": "https://scm-assets.constant.co/unilever/e9dc924f238fa6cc29465942875fe8f0/e94f8478-a755-43ec-9f91-c39339d427c3.jpg"
+        }
+      ],
+      "author": {
+        "type": "Person",
+        "name": "Amy Maddox"
+      },
+      "description": "Een sandwich met geroosterde groenten zoals courgette, aubergine en paprika. Met een smakelijke margarine met verse basilicum. Lekker om te nemen voor bij een picknick of gewoon zo als lunch.",
+      "prepTime": "PT5M",
+      "cookTime": "PT10M",
+      "totalTime": "PT20M",
+      "keywords": "Gemiddelde,Gemiddeld,Lunch,Mild,",
+      "recipeYield": "4",
+      "recipeCategory": "Hoofdgerecht",
+      "recipeCuisine": "Mediterraans",
+      "nutrition": {
+        "type": "NutritionInformation",
+        "calories": "300.87kcal",
+        "carbohydrateContent": "27.48g",
+        "cholesterolContent": "0.32mg",
+        "fiberContent": "5.87g",
+        "proteinContent": "8.65g",
+        "sodiumContent": "169.94mg",
+        "fatContent": "18.11g",
+        "saturatedFatContent": "3.99g",
+        "transFatContent": "0.07g",
+        "unsaturatedFatContent": "13.5g",
+        "sugarContent": "9.42g"
+      },
+      "recipeIngredient": [
+        "1 courgette",
+        "1 aubergine",
+        "1 rode paprika",
+        "1 el olie",
+        "2 el pijnboompitten",
+        "Paar blaadjes verse basilicum",
+        "60 g Becel Biologisch",
+        "6 sneetjes volkorenbrood met zaden"
+      ],
+      "recipeInstructions": [
+        {
+          "type": "HowToStep",
+          "text": "Was de groenten. Snijd met een kaasschaaf in de lengte dunne plakken <b>courgette</b> en <b>aubergine</b>. Snijd de <b>paprika</b> in vieren en verwijder de zaadlijsten. Doe de groenten in een schaal en schenk er wat olie over.\r\nRooster ondertussen de pijnboompitjes in een koekenpan goudbruin. Hak vervolgens de <b>basilicumblaadjes</b> fijn en meng door 3 eetlepels <b>Becel olie</b>."
+        },
+        {
+          "type": "HowToStep",
+          "text": "Verwarm een grillplaat op hoog vuur en <b>rooster</b> de groenten (plakje voor plakje) in enkele minuten gaar."
+        },
+        {
+          "type": "HowToStep",
+          "text": "Besmeer de <b>boterhammen</b> met de margarine. Leg op twee boterhammen de geroosterde plakjes courgette en aubergine. Doe er een blaadje basilicum en een paar pijnboompitjes bovenop. Leg daarop een andere boterham en beleg die met de paprika, basilicumblaadje en pijnboompitjes. Doe daar bovenop de laatste boterham en snijd diagonaal doormidden."
+        }
+      ],
+      "aggregateRating": {
+        "type": "AggregateRating",
+        "ratingValue": null,
+        "ratingCount": null
+      },
+      "video": [
+        {
+          "type": "VideoObject",
+          "name": null,
+          "description": null,
+          "thumbnailUrl": [
+            null
+          ],
+          "contentUrl": null,
+          "embedUrl": null,
+          "uploadDate": null,
+          "duration": null,
+          "interactionCount": null,
+          "expires": null
+        }
+      ]
+    },
+    "recipeData": {
+      "recipeID": "13724",
+      "name": "Sandwich met geroosterde groenten en basilicum",
+      "image": [
+        {
+          "default": "https://scm-assets.constant.co/unilever/e9dc924f238fa6cc29465942875fe8f0/e94f8478-a755-43ec-9f91-c39339d427c3.jpg"
+        }
+      ],
+      "author": {
+        "type": "Person",
+        "name": "Amy Maddox"
+      },
+      "description": "Een sandwich met geroosterde groenten zoals courgette, aubergine en paprika. Met een smakelijke margarine met verse basilicum. Lekker om te nemen voor bij een picknick of gewoon zo als lunch.",
+      "prepTime": "PT5M",
+      "cookTime": "PT10M",
+      "totalTime": "PT20M",
+      "countries": [
+        "NL"
+      ],
+      "languages": [
+        null
+      ],
+      "brands": [
+        "Becel"
+      ],
+      "campaigns": [
+        "Becel | Becel Brood 2009"
+      ],
+      "spiciness": [
+        "Mild"
+      ],
+      "chefs": [
+        null
+      ],
+      "freeFormTags": [
+        null
+      ],
+      "budgets": [
+        "Gemiddelde"
+      ],
+      "occasions": [
+        "Picknick"
+      ],
+      "difficulty": [
+        "Gemiddeld"
+      ],
+      "cookingMethods": [
+        "Grillen",
+        " Barbecue"
+      ],
+      "timesOfDay": [
+        "Lunch"
+      ],
+      "seasons": [
+        null
+      ],
+      "dishes": [
+        "Brood",
+        " groenten",
+        " Sandwiches en broodjes"
+      ],
+      "recipeYield": "4",
+      "recipeCategory": "Hoofdgerecht",
+      "recipeCuisine": "Mediterraans",
+      "nutritionalInformation": [
+        {
+          "nutritionPerServing": {
+            "energyPerNutrientBasis": {
+              "value": "300.87",
+              "unitCode": "kcal",
+              "dailyValueIntakePercent": "15%",
+              "isCore": "true"
+            },
+            "biotinPerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "calciumPerNutrientBasis": {
+              "value": "68.47",
+              "unitCode": "mg",
+              "dailyValueIntakePercent": "7%",
+              "isCore": "false"
+            },
+            "carbohydratesPerNutrientBasis": {
+              "value": "27.48",
+              "unitCode": "g",
+              "dailyValueIntakePercent": "9%",
+              "isCore": "false"
+            },
+            "chloridePerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "cholesterolPerNutrientBasis": {
+              "value": "0.32",
+              "unitCode": "mg",
+              "dailyValueIntakePercent": "<1%",
+              "isCore": "false"
+            },
+            "chromiumPerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "copperPerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "energyFromFatPerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "fatPerNutrientBasis": {
+              "value": "18.11",
+              "unitCode": "g",
+              "dailyValueIntakePercent": "28%",
+              "isCore": "true"
+            },
+            "fibrePerNutrientBasis": {
+              "value": "5.87",
+              "unitCode": "g",
+              "dailyValueIntakePercent": "23%",
+              "isCore": "true"
+            },
+            "fluoridePerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "folicAcidPerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "iodinePerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "ironPerNutrientBasis": {
+              "value": "2.48",
+              "unitCode": "mg",
+              "dailyValueIntakePercent": "14%",
+              "isCore": "false"
+            },
+            "magnesiumPerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "manganesePerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "molybdenumPerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "monounsaturatedFatPerNutrientBasis": {
+              "value": "3.73",
+              "unitCode": "g",
+              "dailyValueIntakePercent": null,
+              "isCore": "false"
+            },
+            "niacinPerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "pantothenicAcidPerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "phosphorusPerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "polyolsPerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "potassiumPerNutrientBasis": {
+              "value": "507.91",
+              "unitCode": "mg",
+              "dailyValueIntakePercent": "15%",
+              "isCore": "false"
+            },
+            "proteinPerNutrientBasis": {
+              "value": "8.65",
+              "unitCode": "g",
+              "dailyValueIntakePercent": "17%",
+              "isCore": "true"
+            },
+            "riboflavinPerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "saltPerNutrientBasis": {
+              "value": "0.42",
+              "unitCode": "g",
+              "dailyValueIntakePercent": "7%",
+              "isCore": "false"
+            },
+            "saturatedFatPerNutrientBasis": {
+              "value": "3.99",
+              "unitCode": "g",
+              "dailyValueIntakePercent": "20%",
+              "isCore": "true"
+            },
+            "seleniumPerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "sodiumPerNutrientBasis": {
+              "value": "169.94",
+              "unitCode": "mg",
+              "dailyValueIntakePercent": "7%",
+              "isCore": "true"
+            },
+            "starchPerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "sugarsPerNutrientBasis": {
+              "value": "9.42",
+              "unitCode": "g",
+              "dailyValueIntakePercent": null,
+              "isCore": "true"
+            },
+            "thiaminPerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "transFatPerNutrientBasis": {
+              "value": "0.07",
+              "unitCode": "g",
+              "dailyValueIntakePercent": null,
+              "isCore": "false"
+            },
+            "vitaminAPerNutrientBasis": {
+              "value": "0.0",
+              "unitCode": "IU",
+              "dailyValueIntakePercent": "<1%",
+              "isCore": "false"
+            },
+            "vitaminB12PerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "vitaminB6PerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "vitaminCPerNutrientBasis": {
+              "value": "55.3",
+              "unitCode": "mg",
+              "dailyValueIntakePercent": "92%",
+              "isCore": "false"
+            },
+            "vitaminDPerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "vitaminEPerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "vitaminKPerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            },
+            "zincPerNutrientBasis": {
+              "value": null,
+              "unitCode": null,
+              "dailyValueIntakePercent": null,
+              "isCore": null
+            }
+          }
+        }
+      ],
+      "recipeIngredient": [
+        "1 courgette",
+        "1 aubergine",
+        "1 rode paprika",
+        "1 el olie",
+        "2 el pijnboompitten",
+        "Paar blaadjes verse basilicum",
+        "60 g Becel Biologisch",
+        "6 sneetjes volkorenbrood met zaden"
+      ],
+      "recipeInstructions": [
+        {
+          "type": "HowToStep",
+          "text": "Was de groenten. Snijd met een kaasschaaf in de lengte dunne plakken <b>courgette</b> en <b>aubergine</b>. Snijd de <b>paprika</b> in vieren en verwijder de zaadlijsten. Doe de groenten in een schaal en schenk er wat olie over.\r\nRooster ondertussen de pijnboompitjes in een koekenpan goudbruin. Hak vervolgens de <b>basilicumblaadjes</b> fijn en meng door 3 eetlepels <b>Becel olie</b>."
+        },
+        {
+          "type": "HowToStep",
+          "text": "Verwarm een grillplaat op hoog vuur en <b>rooster</b> de groenten (plakje voor plakje) in enkele minuten gaar."
+        },
+        {
+          "type": "HowToStep",
+          "text": "Besmeer de <b>boterhammen</b> met de margarine. Leg op twee boterhammen de geroosterde plakjes courgette en aubergine. Doe er een blaadje basilicum en een paar pijnboompitjes bovenop. Leg daarop een andere boterham en beleg die met de paprika, basilicumblaadje en pijnboompitjes. Doe daar bovenop de laatste boterham en snijd diagonaal doormidden."
+        }
+      ],
+      "dietaryClaim": [
+        {
+          "nut_free": {
+            "state": "false"
+          },
+          "vegan": {
+            "state": "true"
+          },
+          "egg_free": {
+            "state": "unknown"
+          },
+          "dairy_free": {
+            "state": "unknown"
+          },
+          "paleo_diet": {
+            "state": "unknown"
+          },
+          "pregnancy_safe": {
+            "state": "unknown"
+          },
+          "raw_food": {
+            "state": "unknown"
+          },
+          "wheat_free": {
+            "state": "unknown"
+          },
+          "lactose_free": {
+            "state": "unknown"
+          },
+          "vegetarian": {
+            "state": "true"
+          },
+          "gluten_free": {
+            "state": "unknown"
+          }
+        }
+      ],
+      "validServingSizes": "4",
+      "locale": "nl-NL",
+      "nutritions_core_completed": true,
+      "nutritions_all_completed": false,
+      "business_group": "Unilever Global"
+    }
+  },
+  "_id": "dummy",
+  "eventType": "dummy",
+  "timestamp": "2019-11-01T00:00:00.000-08:00"
+}
