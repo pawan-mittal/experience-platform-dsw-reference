@@ -1,0 +1,17 @@
+{
+    "title": "retail_sales_input_schemaobject1",
+    "description": "retail_sales_input_schemaobject1",
+    "type": "object",
+    "auditable": true,
+    "meta:extends": [
+        "https://ns.adobe.com/salesvelocity/mixins/93dc786dd669226ad6214b1435ca6b4a",
+        "https://ns.adobe.com/salesvelocity/classes/1aa97cf5826539e6c046c056dffa368d"
+    ],
+    "allOf": [{
+            "$ref": "https://ns.adobe.com/salesvelocity/mixins/93dc786dd669226ad6214b1435ca6b4a"
+        },
+        {
+            "$ref": "https://ns.adobe.com/salesvelocity/classes/1aa97cf5826539e6c046c056dffa368d"
+        }
+    ]
+}
