@@ -4,11 +4,11 @@ Server:
 
 # All the Enterprise values can be obtained from the Adobe IO Integration
 Enterprise:
-  api_key: 208d43820fef4a4da49c27861248696c
-  org_id: E8475990589B24A90A495DDD@AdobeOrg # Sample value for reference - 20656D0F5B9975B20A495E23@AdobeOrg
-  tech_acct: CA27623F5D3854FC0A495FFB@techacct.adobe.com # Sample value for reference - F98D7E725CCA6F770A495FD9@techacct.adobe.com
-  client_secret: 5177e30b-3b89-40f4-9915-e631311fa9e5
-  x_sandbox_name: malkin
+  api_key: 
+  org_id:  # Sample value for reference - 20656D0F5B9975B20A495E23@AdobeOrg
+  tech_acct:  # Sample value for reference - F98D7E725CCA6F770A495FD9@techacct.adobe.com
+  client_secret: 
+  x_sandbox_name: 
   priv_key_filename: private.key
 
 Platform:
