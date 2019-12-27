@@ -12,3 +12,5 @@ bootstrap/__pycache__/data_ingester.cpython-37.pyc
 bootstrap/__pycache__/get_token.cpython-37.pyc
 bootstrap/__pycache__/schema_ingester.cpython-37.pyc
 bootstrap/__pycache__/utils.cpython-37.pyc
+bootstrap/__pycache__/cleanup.cpython-37.pyc
+bootstrap/__pycache__/mixin_generator.cpython-37.pyc
