@@ -24,8 +24,8 @@ import copy
 from data_ingester import get_dataset_id, get_batch_id, upload_file, replace_tenant_id, close_batch
 from schema_ingester import input_cleanup, get_tenant_id, get_class_id, get_mixin_id, get_schema_id
 from get_token import get_access_token
+from cleanup import cleanup
 from build_recipe_artifacts import build_recipe_artifacts
-
 
 LOGGER = setup_logger(__name__)
 TITLES = "Titles"
@@ -71,7 +71,7 @@ def get_token():
         ims_token = "Bearer " + get_access_token(ims_host, ims_endpoint_jwt, org_id, tech_acct, api_key,
                                                  client_secret, priv_key)
 
-        #LOGGER.error('Access Token: %s', ims_token)
+        #LOGGER.debug('Access Token: %s', ims_token)
     if not ims_token.startswith("Bearer "):
         ims_token = "Bearer " + ims_token
 
@@ -105,6 +105,9 @@ def ingest(headers_for_ingestion):
     input_mixin_definition_title = dictor(cfg, TITLES + ".input_mixin_definition_title", checknone=True)
     input_schema_title = dictor(cfg, TITLES + ".input_schema_title", checknone=True)
     input_dataset_title = dictor(cfg, TITLES + ".input_dataset_title", checknone=True)
+    raw_data_file = dictor(cfg, TITLES + ".file_raw_data_input", checknone=True)
+    raw_data_mixin_schema_file = dictor(cfg, TITLES + ".file_raw_data_mixin_schema", checknone=True)
+    is_mixin_configured = dictor(cfg, TITLES + ".is_mixin_configured", checknone=True)
     original_file = dictor(cfg, TITLES + ".file_replace_tenant_id", checknone=True)
     file_with_tenant_id = dictor(cfg, TITLES + ".file_with_tenant_id", checknone=True)
     is_output_schema_different = dictor(cfg,  TITLES + ".is_output_schema_different", checknone=True)
@@ -139,26 +142,27 @@ def ingest(headers_for_ingestion):
         tenant_id = get_tenant_id(tenant_id_url, copy.deepcopy(headers_for_ingestion))
 
         if(reset_demo == "True"):
-            input_cleanup(create_class_url, create_schema_url, create_mixin_url, copy.deepcopy(headers_for_ingestion), input_class_title, data_for_class, input_mixin_title, data_for_mixin, tenant_id, input_mixin_definition_title)
-        
-        class_id = get_class_id(create_class_url, copy.deepcopy(headers_for_ingestion), input_class_title, data_for_class)
+            #input_cleanup(create_class_url, create_schema_url, create_mixin_url, copy.deepcopy(headers_for_ingestion), input_class_title, data_for_class, input_mixin_title, data_for_mixin, tenant_id, input_mixin_definition_title)
+            cleanup_done = cleanup(input_schema_title, create_schema_url, input_class_title, create_class_url, input_mixin_title, create_mixin_url, copy.deepcopy(headers_for_ingestion))
 
-        input_mixin_id = get_mixin_id(create_mixin_url, copy.deepcopy(headers_for_ingestion), input_mixin_title,
-                                      data_for_mixin, class_id, tenant_id, input_mixin_definition_title)
+        if(reset_demo == "False" or cleanup_done == True):
+            class_id = get_class_id(create_class_url, copy.deepcopy(headers_for_ingestion), input_class_title, data_for_class)
+            input_mixin_id = get_mixin_id(create_mixin_url, copy.deepcopy(headers_for_ingestion), 
+                                    input_mixin_title, data_for_mixin, class_id, tenant_id, input_mixin_definition_title, is_mixin_configured, 
+                                    raw_data_file, raw_data_mixin_schema_file)
+            input_schema_id = get_schema_id(create_schema_url, copy.deepcopy(headers_for_ingestion), input_schema_title,
+                                            class_id, input_mixin_id, data_for_schema)
 
-        input_schema_id = get_schema_id(create_schema_url, copy.deepcopy(headers_for_ingestion), input_schema_title,
-                                        class_id, input_mixin_id, data_for_schema)
+            # input_dataset_id = get_dataset_id(create_dataset_url, copy.deepcopy(headers_for_ingestion), input_dataset_title,
+            #                                   input_schema_id, data_for_dataset)
 
-        # input_dataset_id = get_dataset_id(create_dataset_url, copy.deepcopy(headers_for_ingestion), input_dataset_title,
-        #                                   input_schema_id, data_for_dataset)
+            # batch_id = get_batch_id(create_batch_url, copy.deepcopy(headers_for_ingestion), input_dataset_id, data_for_batch)
 
-        # batch_id = get_batch_id(create_batch_url, copy.deepcopy(headers_for_ingestion), input_dataset_id, data_for_batch)
+            # replace_tenant_id(original_file, file_with_tenant_id, tenant_id)
 
-        # replace_tenant_id(original_file, file_with_tenant_id, tenant_id)
+            # upload_file(create_batch_url, copy.deepcopy(headers_for_ingestion), file_with_tenant_id, input_dataset_id, batch_id)
 
-        # upload_file(create_batch_url, copy.deepcopy(headers_for_ingestion), file_with_tenant_id, input_dataset_id, batch_id)
-
-        # close_batch(create_batch_url, copy.deepcopy(headers_for_ingestion), batch_id)
+            # close_batch(create_batch_url, copy.deepcopy(headers_for_ingestion), batch_id)
 
         if is_output_schema_different == "True":
             output_mixin_id = get_mixin_id(create_mixin_url, copy.deepcopy(headers_for_ingestion), output_mixin_title,

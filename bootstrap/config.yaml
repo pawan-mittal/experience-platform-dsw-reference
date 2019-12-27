@@ -33,6 +33,9 @@ Titles:
   output_mixin_definition_title: <output_mixin_definition_title>
   output_schema_title: <output_schema_title>
   output_dataset_title: <output_dataset_title>
+    is_mixin_configured: "True" # if False, then provide file_raw_data_input and file_raw_data_mixin_schema values
+    file_raw_data_input: ../datasets/retail/XDM0.9.9.9/13724.json #JSON or CSV
+    file_raw_data_mixin_schema: ../datasets/retail/XDM0.9.9.9/13724-mixin-schema.json
 
 class_data:
   "type": "object"
@@ -50,7 +53,7 @@ input_mixin_data:
   "definitions": {
     "retail": {
       "properties": {
-        "tenant_id": {
+        "tenantid": {
             "type":"object",
             "properties": {
               "date": {"title": "date", "type": "string","description": "date"},

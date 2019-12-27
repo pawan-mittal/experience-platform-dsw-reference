@@ -19,6 +19,7 @@
 import requests
 import json
 from utils import setup_logger, http_request
+from mixin_generator import gen_mixin_schema_from_json_data
 
 LOGGER = setup_logger(__name__)
 CONTENT_TYPE = "application/json"
@@ -58,7 +59,7 @@ def get_class_id(create_class_url, headers, class_title, data):
     
     return class_id
             
-def get_mixin_id(create_mixin_url, headers, mixin_title, data, class_id, tenant_id, mixin_definition_title):
+def get_mixin_id(create_mixin_url, headers, mixin_title, data, class_id, tenant_id, mixin_definition_title, is_mixin_configured, raw_data_file, raw_data_mixin_schema_file):
     """
     Get the mixinId by making a POST REQUEST to "/data/foundation/schemaregistry/tenant/mixins"
 
@@ -72,6 +73,10 @@ def get_mixin_id(create_mixin_url, headers, mixin_title, data, class_id, tenant_
     :return: mixin url
     """
 
+    if(is_mixin_configured == "False"):
+        json_schema_str = gen_mixin_schema_from_json_data(raw_data_file, raw_data_mixin_schema_file)
+        json_mixin_schema = json.loads(json_schema_str)
+    
     # Set the title and description
     data['title'] = mixin_title
     data['description'] = mixin_title
@@ -82,13 +87,22 @@ def get_mixin_id(create_mixin_url, headers, mixin_title, data, class_id, tenant_
     for key in list(data["definitions"]):
         data["definitions"][mixin_definition_title] = data["definitions"][key]
         for nested_key in list(data["definitions"][key]["properties"]):
-            data["definitions"][key]["properties"][tenant_id] = data["definitions"][key]["properties"][nested_key]
+            if(is_mixin_configured == "False"):
+                data["definitions"][key]["properties"][tenant_id] = json_mixin_schema
+            else:
+                data["definitions"][key]["properties"][tenant_id] = data["definitions"][key]["properties"][nested_key]
+
             del data["definitions"][key]["properties"][nested_key]
         del data["definitions"][key]
     # Set the reference url
     data["allOf"][0]["$ref"] = "#/definitions/" + mixin_definition_title
     headers["Content-type"] = CONTENT_TYPE
     #print ("mixin data : ", data)
+
+    with open(raw_data_mixin_schema_file, 'w') as outfile:
+        json.dump(data, outfile, indent = 2)
+        outfile.close()
+
     res_text = http_request("post", create_mixin_url, headers, json.dumps(data))
     mixin_id = json.loads(res_text)["$id"]
     LOGGER.debug("mixin_id = %s", mixin_id)
