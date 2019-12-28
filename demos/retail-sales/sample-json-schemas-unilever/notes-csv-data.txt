@@ -1,0 +1,41 @@
+1. Use https://github.com/chamkank/hone
+2. Remove delimeters commas, underscores, and spaces from header
+3. Remove empty lines
+4. convert data to 
+    {
+        "_salesvelocity": {
+            
+        },
+        "_id": "dummy",
+        "eventType": "dummy",
+        "timestamp": "2019-11-01T00:00:00.000-08:00"
+    }
+5. Remove "@" char from keys in both json schema and json data 
+6. Append schema json to below json object 
+    {
+    "type": "object",
+    "title": "retail_sales_input_mixinobject2",
+    "description": "retail_sales_input_mixinobject2",
+    "meta:intendedToExtend": [
+        "https://ns.adobe.com/salesvelocity/classes/1aa97cf5826539e6c046c056dffa368d"
+    ],
+    "definitions": {
+        "retail_sales_input_mixin_definitionobject2": {
+            "properties": {
+                "_salesvelocity": {
+                    "type": "object",
+                    "title": "The Root Schema",
+                    "required": [
+                        "header",
+                        "recipeData"
+                    ],
+                    "properties": {
+                        
+                    }
+                }
+            }
+        }
+    }
+    }
+6. Make a JSON single line or set multiline param
+7. Troubleshooting  - there might be errors beacuse few json files may not have matched keys so manually remove and upload them.

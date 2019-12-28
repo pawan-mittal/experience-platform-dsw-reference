@@ -19,7 +19,7 @@
 import requests
 import json
 from utils import setup_logger, http_request
-from mixin_generator import gen_mixin_schema_from_json_data
+from mixin_generator import gen_mixin_schema_from_data
 
 LOGGER = setup_logger(__name__)
 CONTENT_TYPE = "application/json"
@@ -74,9 +74,9 @@ def get_mixin_id(create_mixin_url, headers, mixin_title, data, class_id, tenant_
     """
 
     if(is_mixin_configured == "False"):
-        json_schema_str = gen_mixin_schema_from_json_data(raw_data_file, raw_data_mixin_schema_file)
-        json_mixin_schema = json.loads(json_schema_str)
-    
+        json_schema_str = gen_mixin_schema_from_data(raw_data_file, raw_data_mixin_schema_file)
+
+    json_mixin_schema = json.loads(json_schema_str)
     # Set the title and description
     data['title'] = mixin_title
     data['description'] = mixin_title
